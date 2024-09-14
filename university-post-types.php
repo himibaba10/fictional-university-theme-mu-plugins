@@ -1,6 +1,7 @@
 <?php
 function university_post_types()
 {
+    // Event post type
     register_post_type("event", array(
         'show_in_rest' => true, //This will use the modern block editor
         "public" => true, //Now we can manage events from wp dashboard
@@ -18,6 +19,27 @@ function university_post_types()
             "view_item" => "View Event",
         ),
         "menu_icon" => "dashicons-calendar", //This will change the icon of the Events menu, we can get icons from wp dashicons
+        "has_archive" => true //Where it should have an archive page
+    ));
+
+    // Program post type
+    register_post_type("program", array(
+        'show_in_rest' => true, //This will use the modern block editor
+        "public" => true, //Now we can manage events from wp dashboard
+        "supports" => array("title", "editor"), //lets us add fields that we want
+        "rewrite" => array("slug" => "programs"), //changes the slug to events
+        "labels" => array(
+            "name" => "Programs",
+            "singular_name" => "Program",
+            "all_items" => "All Programs",
+            "not_found" => "No programs found",
+            "add_new" => "Add new program",
+            "add_new_item" => "Add new program",
+            "edit_item" => "Edit Program",
+            "search_items" => "Search Programs",
+            "view_item" => "View Program",
+        ),
+        "menu_icon" => "dashicons-awards", //This will change the icon of the Events menu, we can get icons from wp dashicons
         "has_archive" => true //Where it should have an archive page
     ));
 }
