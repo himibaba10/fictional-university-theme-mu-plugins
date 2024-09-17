@@ -42,6 +42,25 @@ function university_post_types()
         "menu_icon" => "dashicons-awards", //This will change the icon of the Events menu, we can get icons from wp dashicons
         "has_archive" => true //Where it should have an archive page
     ));
+
+    //Professor Post Type
+    register_post_type("professor", array(
+        "show_in_rest" => true,
+        "public" => true,
+        "supports" => array("title", "editor", "thumbnail"),
+        "labels" => array(
+            "name" => "Professors",
+            "singular_name" => "Professor",
+            "all_items" => "All Professors",
+            "not_found" => "No professors found",
+            "add_new" => "Add new professor",
+            "add_new_item" => "Add new professor",
+            "edit_item" => "Edit Professor",
+            "search_items" => "Search Professors",
+            "view_item" => "View Professor",
+        ),
+        "menu_icon" => "dashicons-welcome-learn-more"
+    ));
 }
 
 add_action("init", "university_post_types");
