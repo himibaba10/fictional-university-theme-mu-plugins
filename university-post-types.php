@@ -1,6 +1,27 @@
 <?php
 function university_post_types()
 {
+    // Campus post type
+    register_post_type("campus", array(
+        'show_in_rest' => true, //This will use the modern block editor
+        "public" => true, //Now we can manage events from wp dashboard
+        "supports" => array("title", "editor", "excerpt"), //lets us add fields that we want
+        "rewrite" => array("slug" => "campuses"), //changes the slug to events
+        "labels" => array(
+            "name" => "Campuses",
+            "singular_name" => "Campus",
+            "all_items" => "All Campuses",
+            "not_found" => "No campuses found",
+            "add_new" => "Add new campus",
+            "add_new_item" => "Add new campus",
+            "edit_item" => "Edit Campus",
+            "search_items" => "Search Campuses",
+            "view_item" => "View Campus",
+        ),
+        "menu_icon" => "dashicons-location-alt", //This will change the icon of the Events menu, we can get icons from wp dashicons
+        "has_archive" => true //Where it should have an archive page
+    ));
+
     // Event post type
     register_post_type("event", array(
         'show_in_rest' => true, //This will use the modern block editor
@@ -64,5 +85,3 @@ function university_post_types()
 }
 
 add_action("init", "university_post_types");
-
-?>
