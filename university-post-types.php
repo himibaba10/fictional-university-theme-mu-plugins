@@ -24,6 +24,8 @@ function university_post_types()
 
     // Event post type
     register_post_type("event", array(
+        "capability_type" => "event", //Event will be event post type for managing role
+        "map_meta_cap" => true, //helper for user role
         'show_in_rest' => true, //This will use the modern block editor
         "public" => true, //Now we can manage events from wp dashboard
         "supports" => array("title", "editor", "excerpt"), //lets us add fields that we want
