@@ -5,6 +5,11 @@ function university_post_types()
     register_post_type("event", array(
         "public" => true,
         "has_archive" => true,
+        "supports" => array(
+            "title",
+            "editor",
+            "excerpt",
+        ),
         "rewrite" => array(
             "slug" => "events"
         ),
@@ -16,7 +21,7 @@ function university_post_types()
             "singular_name" => "Event",
         ),
         'menu_icon' => "dashicons-calendar",
-        'show_in_rest' => true,
+        'show_in_rest' => true, //for modern editor
     ));
 }
 
