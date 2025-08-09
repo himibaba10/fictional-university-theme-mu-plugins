@@ -21,7 +21,7 @@ function university_post_types()
             "singular_name" => "Event"
         ],
         'menu_icon' => "dashicons-calendar",
-        'show_in_rest' => true, //for modern editor
+        'show_in_rest' => true,
     ));
 
     register_post_type("program", array(
@@ -42,7 +42,25 @@ function university_post_types()
             "singular_name" => "Program"
         ],
         'menu_icon' => "dashicons-awards",
-        'show_in_rest' => true, //for modern editor
+        'show_in_rest' => true,
+    ));
+
+    register_post_type("professor", array(
+        "public" => true,
+        "supports" => [
+            "title",
+            "editor"
+        ],
+        "labels" => [
+            "name" => "Professors",
+            "add_new_item" => "Add Professor",
+            "edit_item" => "Edit Professor",
+            "all_items" => "All Professors",
+            "singular_name" => "Professor",
+            "not_found" => "No professors found",
+        ],
+        'menu_icon' => "dashicons-welcome-learn-more",
+        'show_in_rest' => true,
     ));
 }
 
