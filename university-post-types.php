@@ -49,7 +49,8 @@ function university_post_types()
         "public" => true,
         "supports" => [
             "title",
-            "editor"
+            "editor",
+            "thumbnail"
         ],
         "labels" => [
             "name" => "Professors",
@@ -58,6 +59,7 @@ function university_post_types()
             "all_items" => "All Professors",
             "singular_name" => "Professor",
             "not_found" => "No professors found",
+            "set_featured_image" => "Set professor image",
         ],
         'menu_icon' => "dashicons-welcome-learn-more",
         'show_in_rest' => true,
