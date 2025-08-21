@@ -91,7 +91,7 @@ function university_post_types()
         'show_in_rest' => true,
     ));
 
-    register_post_type("campus", array(
+    register_post_type("note", array(
         "public" => false,
         "show_ui" => true,
         "supports" => [
